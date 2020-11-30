@@ -117,7 +117,7 @@
                         <viewLayoutGuide key="safeArea" id="QAk-wa-wWx"/>
                     </view>
                     <connections>
-                        <outlet property="WelcomeLabel" destination="AeS-5c-dcC" id="YdX-Fi-svW"/>
+                        <outlet property="welcomeLabel" destination="AeS-5c-dcC" id="YdX-Fi-svW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66T-1a-Bw4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

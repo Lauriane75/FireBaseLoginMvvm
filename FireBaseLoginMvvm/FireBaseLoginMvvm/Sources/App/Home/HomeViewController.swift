@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
 
     // MARK: - Outlets
 
-    @IBOutlet weak var WelcomeLabel: UILabel!
+    @IBOutlet weak var welcomeLabel: UILabel!
 
     // MARK: - Properties
 
@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
     private func bind(to viewModel: HomeViewModel) {
         viewModel.welcomeLabelText = { [weak self] text in
             guard let self = self else { return }
-            self.WelcomeLabel.text = text
+            self.welcomeLabel.text = text
         }
     }
     

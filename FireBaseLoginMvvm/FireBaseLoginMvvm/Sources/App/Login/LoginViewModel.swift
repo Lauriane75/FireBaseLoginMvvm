@@ -25,9 +25,9 @@ final class LoginViewModel {
     // MARK: - Initializer
 
     init(repository: RepositoryType, delegate: LoginViewModelDelegate?) {
-          self.repository = repository
-          self.delegate = delegate
-      }
+        self.repository = repository
+        self.delegate = delegate
+    }
 
     // MARK: - Output
 
@@ -49,5 +49,18 @@ final class LoginViewModel {
     func didPressLoginButton() {
         delegate?.goToHomeScreen()
     }
+
+    func validateTheFields(email: String, password: String) -> String? {
+        guard email != "" || password != "" else {
+            return "Please fill in all fields"
+        }
+//        if email == "" || password == "" {
+//            return "Please fill in all fields"
+//        }
+        return nil
+    }
+
+    // MARK: - Private Functions
+
 
 }

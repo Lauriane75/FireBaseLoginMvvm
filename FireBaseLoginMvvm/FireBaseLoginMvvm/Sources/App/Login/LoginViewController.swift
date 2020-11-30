@@ -59,11 +59,34 @@ class LoginViewController: UIViewController {
     // MARK: - View actions
 
     @IBAction func didPressLoginButton(_ sender: Any) {
-        viewModel.didPressLoginButton()
+        let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        let error = viewModel.validateTheFields(email: email, password: password)
+
+        if error == nil {
+            showError(error!)
+        } else {
+            Firebase.Authentification.auth.signIn(withEmail: email, password: password) { (result, error) in
+                if error != nil {
+                    self.errorLabel.text = error!.localizedDescription
+                    self.errorLabel.alpha = 1
+                } else {
+                    self.viewModel.didPressLoginButton()
+                }
+            }
+        }
     }
 
     @IBAction func didPressSigninButton(_ sender: Any) {
         viewModel.didPressSigninButton()
+    }
+
+    // MARK: - Private Functions
+
+    private func showError(_ message: String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
     }
 
 }

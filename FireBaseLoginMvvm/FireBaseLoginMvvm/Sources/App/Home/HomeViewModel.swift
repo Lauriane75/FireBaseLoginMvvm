@@ -41,4 +41,7 @@ final class HomeViewModel {
     func viewWillAppear() {
     }
 
+    // MARK: - Private Functions
+
+
 }
