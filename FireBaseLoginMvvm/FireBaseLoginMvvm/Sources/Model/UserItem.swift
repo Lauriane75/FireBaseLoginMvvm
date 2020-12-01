@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct User: Codable {
+struct UserItem: Equatable {
     var uid: Int
     var firstName: String
     var lastName: String

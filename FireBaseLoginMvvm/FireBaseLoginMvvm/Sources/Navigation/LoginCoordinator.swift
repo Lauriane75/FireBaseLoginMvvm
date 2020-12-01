@@ -43,16 +43,16 @@ final class LoginCoordinator {
         navigationController.pushViewController(viewController, animated: false)
     }
 
-    private func showHomeView() {
-           let viewController = screens.createHomeViewController(delegate: self)
-           navigationController.pushViewController(viewController, animated: false)
-       }
+    private func showHomeView(userItem: UserItem) {
+        let viewController = screens.createHomeViewController(delegate: self, userItem: userItem)
+        navigationController.pushViewController(viewController, animated: false)
+    }
 
 }
 
 extension LoginCoordinator: LoginViewModelDelegate {
-    func goToHomeScreen() {
-        showHomeView()
+    func goToHomeScreen(userItem: UserItem) {
+        showHomeView(userItem: userItem)
     }
 
     func goToSignupScreen() {
@@ -61,6 +61,7 @@ extension LoginCoordinator: LoginViewModelDelegate {
 }
 
 extension LoginCoordinator: SignupViewModelDelegate {
+
 
 }
 

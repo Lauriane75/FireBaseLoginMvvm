@@ -16,7 +16,7 @@
 		F64D052A2573A6C9001BB74A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F64D05292573A6C9001BB74A /* GoogleService-Info.plist */; };
 		F64D052F2573B010001BB74A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D052E2573B010001BB74A /* LoginViewModel.swift */; };
 		F64D05332573B031001BB74A /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D05322573B031001BB74A /* SignupViewModel.swift */; };
-		F64D05362573B04D001BB74A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D05352573B04D001BB74A /* Repository.swift */; };
+		F64D05362573B04D001BB74A /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D05352573B04D001BB74A /* AuthRepository.swift */; };
 		F64D05382573F593001BB74A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D05372573F592001BB74A /* SignupViewController.swift */; };
 		F64D053B2573F5A3001BB74A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D053A2573F5A3001BB74A /* HomeViewController.swift */; };
 		F64D053D2573F5AF001BB74A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D053C2573F5AF001BB74A /* HomeViewModel.swift */; };
@@ -28,10 +28,10 @@
 		F64D054B2573F8E7001BB74A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D054A2573F8E7001BB74A /* Token.swift */; };
 		F64D054D2573F9F8001BB74A /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D054C2573F9F8001BB74A /* Screens.swift */; };
 		F64D054F2573FA31001BB74A /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D054E2573FA31001BB74A /* SignUpCoordinator.swift */; };
-		F64D05532573FA9E001BB74A /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64D05522573FA9E001BB74A /* Firebase.swift */; };
-		F66A9B862574045300540405 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66A9B852574045300540405 /* User.swift */; };
+		F66A9B862574045300540405 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66A9B852574045300540405 /* UserItem.swift */; };
 		F66A9B8825741C7F00540405 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66A9B8725741C7F00540405 /* LoginCoordinator.swift */; };
 		F66A9BC32574F40A00540405 /* Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66A9BC22574F40A00540405 /* Custom.swift */; };
+		F66A9BC52575134100540405 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66A9BC42575134100540405 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,7 @@
 		F64D05292573A6C9001BB74A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F64D052E2573B010001BB74A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F64D05322573B031001BB74A /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
-		F64D05352573B04D001BB74A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		F64D05352573B04D001BB74A /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		F64D05372573F592001BB74A /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		F64D053A2573F5A3001BB74A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F64D053C2573F5AF001BB74A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -60,10 +60,10 @@
 		F64D054A2573F8E7001BB74A /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		F64D054C2573F9F8001BB74A /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		F64D054E2573FA31001BB74A /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
-		F64D05522573FA9E001BB74A /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
-		F66A9B852574045300540405 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F66A9B852574045300540405 /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		F66A9B8725741C7F00540405 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		F66A9BC22574F40A00540405 /* Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom.swift; sourceTree = "<group>"; };
+		F66A9BC42575134100540405 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,12 +125,12 @@
 		F64D052B2573AFB8001BB74A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F66A9BC12574F3FB00540405 /* Custom */,
 				F64D05152573A528001BB74A /* AppDelegate.swift */,
 				F64D05292573A6C9001BB74A /* GoogleService-Info.plist */,
 				F64D05432573F862001BB74A /* Context.swift */,
-				F64D05522573FA9E001BB74A /* Firebase.swift */,
 				F64D051B2573A528001BB74A /* Main.storyboard */,
+				F66A9B842574044700540405 /* Model */,
+				F66A9BC12574F3FB00540405 /* Custom */,
 				F64D05402573F600001BB74A /* Navigation */,
 				F64D05452573F8AA001BB74A /* Network */,
 				F64D052D2573AFE6001BB74A /* App */,
@@ -171,8 +171,8 @@
 		F64D05312573B01F001BB74A /* Signup */ = {
 			isa = PBXGroup;
 			children = (
-				F64D05322573B031001BB74A /* SignupViewModel.swift */,
 				F64D05372573F592001BB74A /* SignupViewController.swift */,
+				F64D05322573B031001BB74A /* SignupViewModel.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 		F64D05342573B035001BB74A /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				F64D05352573B04D001BB74A /* Repository.swift */,
+				F64D05352573B04D001BB74A /* AuthRepository.swift */,
 				F64D053E2573F5E7001BB74A /* HomeRepository.swift */,
 			);
 			path = Repository;
@@ -189,7 +189,6 @@
 		F64D05392573F598001BB74A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F66A9B842574044700540405 /* Model */,
 				F64D053A2573F5A3001BB74A /* HomeViewController.swift */,
 				F64D053C2573F5AF001BB74A /* HomeViewModel.swift */,
 			);
@@ -220,7 +219,7 @@
 		F66A9B842574044700540405 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F66A9B852574045300540405 /* User.swift */,
+				F66A9B852574045300540405 /* UserItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				F66A9BC22574F40A00540405 /* Custom.swift */,
+				F66A9BC42575134100540405 /* Utilities.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -372,10 +372,10 @@
 				F66A9B8825741C7F00540405 /* LoginCoordinator.swift in Sources */,
 				F64D05472573F8BA001BB74A /* HTTPEngine.swift in Sources */,
 				F64D053D2573F5AF001BB74A /* HomeViewModel.swift in Sources */,
-				F64D05532573FA9E001BB74A /* Firebase.swift in Sources */,
 				F64D05382573F593001BB74A /* SignupViewController.swift in Sources */,
 				F64D05332573B031001BB74A /* SignupViewModel.swift in Sources */,
-				F66A9B862574045300540405 /* User.swift in Sources */,
+				F66A9B862574045300540405 /* UserItem.swift in Sources */,
+				F66A9BC52575134100540405 /* Utilities.swift in Sources */,
 				F64D054B2573F8E7001BB74A /* Token.swift in Sources */,
 				F64D053B2573F5A3001BB74A /* HomeViewController.swift in Sources */,
 				F64D051A2573A528001BB74A /* LoginViewController.swift in Sources */,
@@ -385,7 +385,7 @@
 				F64D054D2573F9F8001BB74A /* Screens.swift in Sources */,
 				F64D05492573F8D7001BB74A /* HTTPClient.swift in Sources */,
 				F64D05442573F862001BB74A /* Context.swift in Sources */,
-				F64D05362573B04D001BB74A /* Repository.swift in Sources */,
+				F64D05362573B04D001BB74A /* AuthRepository.swift in Sources */,
 				F64D05422573F7FB001BB74A /* GeneralCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

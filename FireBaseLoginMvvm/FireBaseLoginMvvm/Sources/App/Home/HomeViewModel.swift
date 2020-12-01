@@ -16,16 +16,19 @@ final class HomeViewModel {
 
     // MARK: - Properties
 
-    private let repository: HomeRepositoryType
+    private let repository: AuthRepositoryType
 
     private weak var delegate: HomeViewModelDelegate?
+
+    private var userItem: UserItem
 
 
     // MARK: - Initializer
 
-    init(repository: HomeRepositoryType, delegate: HomeViewModelDelegate?) {
+    init(repository: AuthRepositoryType, delegate: HomeViewModelDelegate?, userItem: UserItem) {
           self.repository = repository
           self.delegate = delegate
+          self.userItem = userItem
       }
 
     // MARK: - Output
@@ -35,10 +38,16 @@ final class HomeViewModel {
     // MARK: - Input
 
     func viewDidLoad() {
-        welcomeLabelText?("Welcome")
+        welcomeLabelText?("Welcome \(userItem.firstName)")
     }
 
     func viewWillAppear() {
+    }
+
+    func didPressLogoutButton() {
+
+
+        
     }
 
     // MARK: - Private Functions

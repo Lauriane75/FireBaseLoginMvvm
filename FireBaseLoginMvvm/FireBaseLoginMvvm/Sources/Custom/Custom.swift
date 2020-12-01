@@ -6,7 +6,6 @@
 //  Copyright © 2020 Lauriane Haydari. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class Custom {
@@ -29,11 +28,5 @@ class Custom {
         button.layer.borderColor = borderColor
         button.layer.cornerRadius = 15.0
         button.tintColor = tintColor
-    }
-
-    static func isPasswordValid(_ password : String) -> Bool {
-        // regular expression passed by a boolean
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
-        return passwordTest.evaluate(with: password)
     }
 }

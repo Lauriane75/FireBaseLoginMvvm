@@ -10,21 +10,21 @@ import Foundation
 
 protocol LoginViewModelDelegate: class {
     func goToSignupScreen()
-    func goToHomeScreen()
+    func goToHomeScreen(userItem: UserItem)
 }
 
 final class LoginViewModel {
 
     // MARK: - Properties
 
-    private let repository: RepositoryType
+    private let repository: AuthRepositoryType
 
     private weak var delegate: LoginViewModelDelegate?
 
 
     // MARK: - Initializer
 
-    init(repository: RepositoryType, delegate: LoginViewModelDelegate?) {
+    init(repository: AuthRepositoryType, delegate: LoginViewModelDelegate?) {
         self.repository = repository
         self.delegate = delegate
     }
@@ -32,6 +32,8 @@ final class LoginViewModel {
     // MARK: - Output
 
     var loginButtonText: ((String) -> Void)?
+    var errorLabelText: ((String) -> Void)?
+    var errorLabelAlpha: ((Int) -> Void)?
 
     // MARK: - Input
 
@@ -42,25 +44,35 @@ final class LoginViewModel {
     func viewWillAppear() {
     }
 
-    func didPressSigninButton() {
+    func didPressSignupButton() {
         delegate?.goToSignupScreen()
     }
 
-    func didPressLoginButton() {
-        delegate?.goToHomeScreen()
-    }
-
-    func validateTheFields(email: String, password: String) -> String? {
-        guard email != "" || password != "" else {
-            return "Please fill in all fields"
+    func didPressLoginButton(email: String, password: String) {
+        let error = self.validateTheFields(email: email, password: password)
+        guard error == nil else {
+            self.errorLabelText?(error!)
+            self.errorLabelAlpha?(1)
+            return
         }
-//        if email == "" || password == "" {
-//            return "Please fill in all fields"
-//        }
-        return nil
+        repository.logIn(email: email, password: password) { (result, Error) in
+            guard Error == nil else {
+                self.errorLabelText?(Error!.localizedDescription)
+                self.errorLabelAlpha?(1)
+                return
+            }
+            let userItem = UserItem(uid: 1, firstName: "test", lastName: "test", password: "test")
+            self.delegate?.goToHomeScreen(userItem: userItem)
+        }
     }
 
     // MARK: - Private Functions
 
+    func validateTheFields(email: String, password: String) -> String? {
+        guard email != "" && password != "" else {
+            return "Please fill in all fields"
+        }
+        return nil
+    }
 
 }

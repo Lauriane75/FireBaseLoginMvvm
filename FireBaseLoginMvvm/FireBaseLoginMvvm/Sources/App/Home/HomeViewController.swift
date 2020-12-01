@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabel: UILabel!
 
+    @IBOutlet weak var logoutButton: UIButton!
     // MARK: - Properties
 
     var viewModel: HomeViewModel!
@@ -44,6 +45,8 @@ class HomeViewController: UIViewController {
             self.welcomeLabel.text = text
         }
     }
-    
 
+    @IBAction func didPressLogoutButton(_ sender: Any) {
+        viewModel.didPressLogoutButton()
+    }
 }

@@ -22,4 +22,20 @@ final class SignUpCoordinator {
         self.navigationController = presenter
         self.screens = screens
     }
+
+    private func showHomeView(userItem: UserItem) {
+        let viewController = screens.createHomeViewController(delegate: self, userItem: userItem)
+        navigationController.pushViewController(viewController, animated: false)
+    }
+
+}
+
+extension SignUpCoordinator: SignupViewModelDelegate {
+    func goToHomeScreen(userItem: UserItem) {
+        showHomeView(userItem: userItem)
+    }
+}
+
+extension SignUpCoordinator: HomeViewModelDelegate {
+
 }

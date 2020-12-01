@@ -11,10 +11,8 @@ import Foundation
 final class Context {
 
     let client: HTTPClientType
-    let firebase: Firebase
 
-    init(client: HTTPClientType, firebase: Firebase) {
+    init(client: HTTPClientType) {
         self.client = client
-        self.firebase = firebase
     }
 }

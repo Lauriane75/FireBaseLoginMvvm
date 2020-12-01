@@ -23,9 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
 
         let client = HTTPClient()
-        let firebase = Firebase()
 
-        context = Context(client: client, firebase: firebase)
+        context = Context(client: client)
 
         coordinator = GeneralCoordinator(presenter: window!,
                                          context: context)

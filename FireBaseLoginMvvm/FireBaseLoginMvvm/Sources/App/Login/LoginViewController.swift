@@ -28,7 +28,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         setUpElements()
-
         
         bind(to: viewModel!)
 
@@ -46,14 +45,27 @@ class LoginViewController: UIViewController {
             guard let self = self else { return }
             self.loginButton.setTitle(text, for: .normal)
         }
+        viewModel.errorLabelText = { [weak self] text in
+        guard let self = self else { return }
+            self.errorLabel.text = text
+        }
+        viewModel.errorLabelAlpha = { [weak self] alpha in
+            guard let self = self else { return }
+            self.errorLabel.alpha = CGFloat(alpha)
+        }
     }
 
     private func setUpElements() {
         errorLabel.alpha = 0
-        Custom.styleTextField(emailTextField, backgroundColor: UIColor.orange.cgColor)
-        Custom.styleTextField(emailTextField, backgroundColor: UIColor.orange.cgColor)
-        Custom.styleButton(signupButton, backgroundColor: UIColor.orange, tintColor: UIColor.white)
+        Custom.styleTextField(emailTextField, backgroundColor: UIColor.blue.cgColor)
+        Custom.styleTextField(emailTextField, backgroundColor: UIColor.blue.cgColor)
+        Custom.styleButton(signupButton, backgroundColor: UIColor.blue, tintColor: UIColor.white)
         Custom.styleButton(loginButton, backgroundColor: UIColor.green, tintColor: UIColor.white)
+    }
+
+    private func showError(_ message: String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
     }
 
     // MARK: - View actions
@@ -62,32 +74,11 @@ class LoginViewController: UIViewController {
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
 
-        let error = viewModel.validateTheFields(email: email, password: password)
-
-        if error == nil {
-            showError(error!)
-        } else {
-            Firebase.Authentification.auth.signIn(withEmail: email, password: password) { (result, error) in
-                if error != nil {
-                    self.errorLabel.text = error!.localizedDescription
-                    self.errorLabel.alpha = 1
-                } else {
-                    self.viewModel.didPressLoginButton()
-                }
-            }
-        }
+        viewModel.didPressLoginButton(email: email, password: password)
     }
 
-    @IBAction func didPressSigninButton(_ sender: Any) {
-        viewModel.didPressSigninButton()
+    @IBAction func didPressSignupButton(_ sender: Any) {
+        viewModel.didPressSignupButton()
     }
-
-    // MARK: - Private Functions
-
-    private func showError(_ message: String) {
-        errorLabel.text = message
-        errorLabel.alpha = 1
-    }
-
 }
 
